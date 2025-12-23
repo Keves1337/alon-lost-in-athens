@@ -8,337 +8,290 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <TripHeader />
 
-      {/* Alon Status Widget */}
-      <div className="max-w-2xl mx-auto px-6 mb-8">
-        <AlonStatus />
-      </div>
-
-      {/* Schedule */}
-      <main className="max-w-2xl mx-auto px-6 pb-20">
+      {/* Main Content */}
+      <main className="max-w-3xl mx-auto px-6 py-12">
         
-        {/* Day 1 - January 15 */}
+        {/* Alon Status */}
+        <div className="mb-12">
+          <AlonStatus />
+        </div>
+
+        {/* Day 1 */}
         <DaySection 
-          date="January 15, 2025" 
+          date="January 15" 
           day="Wednesday" 
-          title="Arrival & The Navigation Begins" 
-          emoji="✈️" 
-          delay={300}
+          title="Arrival & Orientation" 
+          delay={100}
           isFirst
         >
           <ScheduleCard
             time="10:30"
-            title="Land at Athens International"
-            description="Touch down in Greece. Alon immediately announces he's 'got this' regarding directions."
-            icon="🛬"
-            delay={350}
+            title="Arrive at Athens International Airport"
+            description="Touch down in Greece. Collect bags, clear customs, begin the adventure."
+            delay={150}
           />
           <ScheduleCard
             time="12:00"
             title="Hotel Check-in"
-            description="Drop bags at the hotel. Alon studies the map intensely for 4 minutes."
-            icon="🏨"
-            delay={400}
+            description="Drop luggage at the hotel. Quick refresh before heading out."
+            delay={200}
           />
           <ScheduleCard
             time="12:30"
-            title="Operation: Find Syntagma Square"
-            description="Alon confidently leads us out. 'It's literally a 10-minute walk, I checked.' The adventure begins."
-            icon="🚶"
+            title="Navigate to Syntagma Square"
+            description="Alon takes the lead. 'It's literally a 10-minute walk.' The journey begins."
             isAlonMoment
-            delay={450}
+            delay={250}
           />
           <ScheduleCard
             time="12:45"
-            title="First Wrong Turn"
-            description="'No no, this is correct, we just need to go around this block.' Narrator: We did not need to."
-            icon="↩️"
+            title="First Recalculation"
+            description="'This is correct, we just need to go around.' Narrator: We did not."
             isAlonMoment
-            delay={500}
+            delay={300}
           />
           <ScheduleCard
             time="13:15"
-            title="Coffee Break (Unplanned)"
-            description="'Let's stop here and recalibrate.' Translation: Alon needs to secretly check Google Maps."
-            icon="☕"
+            title="Coffee Stop"
+            description="'Let's recalibrate here.' Translation: covert Google Maps consultation."
             isAlonMoment
-            delay={550}
+            delay={350}
           />
           <ScheduleCard
             time="14:00"
-            title="Arrive at Syntagma Square"
-            description="Finally made it. Everyone agrees never to speak of the 90-minute 'scenic route' again."
-            icon="🏛️"
-            delay={600}
+            title="Syntagma Square"
+            description="Finally arrived. The 90-minute 'scenic route' shall not be discussed."
+            delay={400}
           />
           <ScheduleCard
             time="15:00"
             title="Changing of the Guard"
-            description="Watch the Evzones at the Parliament. Actually impressive. We all pretend we knew this was here."
-            icon="💂"
-            delay={650}
+            description="Watch the Evzones ceremony at Parliament. Genuinely impressive."
+            delay={450}
           />
           <ScheduleCard
             time="19:00"
-            title="First Greek Dinner"
-            description="Taverna in Plaka. Order way too much food. Discover ouzo is stronger than expected."
-            icon="🍽️"
-            delay={700}
+            title="Dinner in Plaka"
+            description="First Greek dinner. Order everything. Discover ouzo is potent."
+            delay={500}
           />
         </DaySection>
 
-        {/* Day 2 - January 16 */}
+        {/* Day 2 */}
         <DaySection 
-          date="January 16, 2025" 
+          date="January 16" 
           day="Thursday" 
-          title="Acropolis & Ancient Wonders" 
-          emoji="🏛️" 
-          delay={750}
+          title="Ancient History" 
+          delay={550}
         >
           <ScheduleCard
             time="08:30"
-            title="Early Breakfast"
-            description="Greek coffee and spanakopita. Everyone pretends they're not still thinking about last night's ouzo."
-            icon="🥐"
-            delay={800}
+            title="Greek Breakfast"
+            description="Coffee and spanakopita. Everyone pretends last night's ouzo was fine."
+            delay={600}
           />
           <ScheduleCard
             time="09:30"
-            title="Walk to Acropolis"
-            description="Alon suggests a 'better route' than Google Maps. Group votes to follow the blue line this time."
-            icon="🗺️"
+            title="Route to Acropolis"
+            description="Alon suggests a 'better route.' Group votes to follow Google Maps instead."
             isAlonMoment
-            delay={850}
+            delay={650}
           />
           <ScheduleCard
             time="10:00"
             title="The Acropolis"
-            description="The Parthenon is genuinely breathtaking. 2,500 years of history. Everyone takes the same photo."
-            icon="🏛️"
-            delay={900}
+            description="The Parthenon. 2,500 years of history. Everyone takes the same photo."
+            delay={700}
           />
           <ScheduleCard
             time="12:30"
             title="Acropolis Museum"
-            description="World-class collection. Learn things we immediately forget. Gift shop purchases are made."
-            icon="🎭"
-            delay={950}
+            description="World-class collection. Learn things. Buy souvenirs in the gift shop."
+            delay={750}
           />
           <ScheduleCard
             time="14:00"
             title="Lunch in Monastiraki"
-            description="Souvlaki from the famous spots. Alon claims he 'knows a local place' but we stay put."
-            icon="🥙"
-            delay={1000}
+            description="Souvlaki at the famous spots. Alon's 'local place' suggestion is declined."
+            delay={800}
           />
           <ScheduleCard
             time="16:00"
             title="Ancient Agora"
-            description="Where Socrates walked. Someone makes a philosophy joke. It doesn't land."
-            icon="📜"
-            delay={1050}
+            description="Where Socrates walked. Someone attempts a philosophy joke. It doesn't land."
+            delay={850}
           />
           <ScheduleCard
             time="20:00"
-            title="Rooftop Dinner with View"
-            description="Acropolis lit up at night. Perfect for Instagram. Alon navigated here successfully (it was visible from the street)."
-            icon="🌙"
-            delay={1100}
+            title="Rooftop Dinner"
+            description="Acropolis view at night. Alon found this successfully. It was visible from the street."
+            delay={900}
           />
         </DaySection>
 
-        {/* Day 3 - January 17 */}
+        {/* Day 3 */}
         <DaySection 
-          date="January 17, 2025" 
+          date="January 17" 
           day="Friday" 
-          title="Markets & Hidden Gems" 
-          emoji="🛍️" 
-          delay={1150}
+          title="Markets & Exploration" 
+          delay={950}
         >
           <ScheduleCard
             time="09:00"
             title="Central Market"
-            description="Athens Central Market experience. Fish, meat, spices. Someone almost buys a whole octopus."
-            icon="🐟"
-            delay={1200}
+            description="Athens Central Market. Fish, meat, spices. Nearly buy an octopus."
+            delay={1000}
           />
           <ScheduleCard
             time="11:00"
-            title="Coffee in Kolonaki"
-            description="Upscale neighborhood vibes. Pretend we belong here while spending €7 on a latte."
-            icon="☕"
-            delay={1250}
+            title="Kolonaki Coffee"
+            description="Upscale neighborhood. €7 lattes. Pretend we belong here."
+            delay={1050}
           />
           <ScheduleCard
             time="12:30"
-            title="Alon's Shortcut to Lycabettus"
-            description="'Trust me, I found stairs that go straight up.' 45 minutes later, we find the funicular."
-            icon="🏔️"
+            title="Lycabettus Approach"
+            description="'I found stairs that go straight up.' 45 minutes later, we find the funicular."
             isAlonMoment
-            delay={1300}
+            delay={1100}
           />
           <ScheduleCard
             time="14:00"
             title="Lycabettus Hill"
-            description="360° views of Athens. Worth the climb (that the funicular would have avoided)."
-            icon="⛰️"
-            delay={1350}
+            description="360° views of Athens. Worth the climb that wasn't necessary."
+            delay={1150}
           />
           <ScheduleCard
             time="16:00"
-            title="National Garden Stroll"
-            description="Peaceful escape in the city center. Turtles in the pond. Very wholesome."
-            icon="🌳"
-            delay={1400}
+            title="National Garden"
+            description="Peaceful city escape. Turtles in the pond. Very wholesome."
+            delay={1200}
           />
           <ScheduleCard
             time="18:00"
-            title="Psiri Neighborhood"
-            description="Street art, quirky bars, great vibes. Alon loses us for 20 mins, claims he was 'scouting ahead.'"
-            icon="🎨"
+            title="Psiri District"
+            description="Street art, bars, vibes. Alon disappears for 20 mins. Claims 'scouting.'"
             isAlonMoment
-            delay={1450}
+            delay={1250}
           />
           <ScheduleCard
             time="21:00"
-            title="Athens Nightlife"
-            description="Bars in Gazi. Dance to music we don't recognize. Create memories we'll selectively forget."
-            icon="🎉"
-            delay={1500}
+            title="Night Out"
+            description="Gazi nightlife. Dance to unfamiliar music. Create selective memories."
+            delay={1300}
           />
         </DaySection>
 
-        {/* Day 4 - January 18 */}
+        {/* Day 4 */}
         <DaySection 
-          date="January 18, 2025" 
+          date="January 18" 
           day="Saturday" 
-          title="Day Trip & Beach Time" 
-          emoji="🏖️" 
-          delay={1550}
+          title="Coastal Excursion" 
+          delay={1350}
         >
           <ScheduleCard
             time="08:00"
-            title="Rent a Car"
-            description="Road trip day. Alon volunteers to navigate. Three voices say 'we'll use the GPS' simultaneously."
-            icon="🚗"
+            title="Car Rental"
+            description="Road trip day. Alon volunteers to navigate. 'We'll use GPS' — everyone."
             isAlonMoment
-            delay={1600}
+            delay={1400}
           />
           <ScheduleCard
             time="10:00"
-            title="Temple of Poseidon at Sounion"
-            description="Stunning clifftop temple. Azure sea views. Ancient Greeks had taste."
-            icon="🔱"
-            delay={1650}
+            title="Temple of Poseidon"
+            description="Cape Sounion. Clifftop temple. Azure sea views. Ancient Greeks had taste."
+            delay={1450}
           />
           <ScheduleCard
             time="12:30"
             title="Beach Stop"
-            description="Find a quiet beach. Mediterranean water in January is brisk but refreshing. One person goes fully in."
-            icon="🌊"
-            delay={1700}
+            description="Mediterranean in January. Brisk but refreshing. One person goes fully in."
+            delay={1500}
           />
           <ScheduleCard
             time="14:30"
             title="Seaside Lunch"
-            description="Fresh fish taverna. The owner recommends dishes. Everything is incredible."
-            icon="🦐"
-            delay={1750}
+            description="Fresh fish taverna. The owner recommends. Everything is excellent."
+            delay={1550}
           />
           <ScheduleCard
             time="17:00"
-            title="Drive Back to Athens"
-            description="Sunset drive along the coast. Alon sleeps in the back. Everyone agrees this is ideal."
-            icon="🌅"
-            delay={1800}
+            title="Return to Athens"
+            description="Sunset coastal drive. Alon sleeps in the back. Everyone agrees this is ideal."
+            delay={1600}
           />
           <ScheduleCard
             time="20:30"
-            title="Last Big Dinner"
-            description="Full mezze spread. Too much raki. Speeches about friendship that will be denied tomorrow."
-            icon="🍷"
-            delay={1850}
+            title="Farewell Dinner"
+            description="Full mezze spread. Too much raki. Speeches about friendship occur."
+            delay={1650}
           />
         </DaySection>
 
-        {/* Day 5 - January 19 */}
+        {/* Day 5 */}
         <DaySection 
-          date="January 19, 2025" 
+          date="January 19" 
           day="Sunday" 
-          title="Farewell Athens" 
-          emoji="👋" 
-          delay={1900}
+          title="Departure" 
+          delay={1700}
         >
           <ScheduleCard
             time="09:00"
             title="Slow Morning"
-            description="Last Greek breakfast. Everyone moves carefully. Coffee consumption is therapeutic."
-            icon="😴"
-            delay={1950}
+            description="Final Greek breakfast. Deliberate movements. Therapeutic coffee consumption."
+            delay={1750}
           />
           <ScheduleCard
             time="11:00"
-            title="Final Souvenir Run"
-            description="Olive oil, spices, magnets. The essentials. Alon buys a compass as a 'joke.'"
-            icon="🎁"
-            delay={2000}
+            title="Last Souvenirs"
+            description="Olive oil, spices, magnets. Alon buys a compass. 'Ironic,' he claims."
+            delay={1800}
           />
           <ScheduleCard
             time="12:30"
-            title="One Last Coffee at Syntagma"
-            description="Return to where it all began. Alon claims he 'could find it blindfolded now.' No one tests this."
-            icon="☕"
+            title="Final Coffee at Syntagma"
+            description="Return to where it began. Alon claims he could find it blindfolded now. Untested."
             isAlonMoment
-            delay={2050}
+            delay={1850}
           />
           <ScheduleCard
             time="14:00"
-            title="Taxi to Airport"
-            description="Professional driver. No wrong turns. Strange feeling."
-            icon="🚕"
-            delay={2100}
+            title="Airport Transfer"
+            description="Professional taxi driver. Direct route. No wrong turns. Strange sensation."
+            delay={1900}
           />
           <ScheduleCard
             time="17:30"
             title="Departure"
-            description="Board the plane home. Group chat immediately starts planning the next trip. Alon is pre-banned from navigation."
-            icon="✈️"
-            delay={2150}
+            description="Board the flight home. Group chat already planning next trip. Alon's navigation privileges: under review."
+            delay={1950}
           />
         </DaySection>
 
         {/* Footer */}
-        <div 
-          className="text-center mt-12 p-8 bg-card rounded-2xl border border-primary/20 shadow-card relative overflow-hidden"
-          style={{ opacity: 0, animation: 'fade-in-up 0.5s ease-out 2200ms forwards' }}
+        <footer 
+          className="mt-16 pt-8 border-t border-border text-center"
+          style={{ opacity: 0, animation: 'fade-in-up 0.4s ease-out 2000ms forwards' }}
         >
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-aegean" />
-          
-          <p className="text-xl font-display text-foreground mb-2">
-            "The main square is definitely this way"
-          </p>
-          <p className="text-sm text-muted-foreground mb-4">
-            — Alon, to Ran, Johnatan & Rubi Dabush Elbaz • January 15, 2025
+          <blockquote className="text-lg font-display text-foreground italic mb-2">
+            "The main square is definitely this way."
+          </blockquote>
+          <p className="text-sm text-muted-foreground mb-6">
+            — Alon, to Ran, Johnatan & Rubi • January 15, 2025
           </p>
           
-          <div className="flex justify-center gap-1 mb-4">
-            <div className="w-6 h-1 rounded-full bg-primary" />
-            <div className="w-6 h-1 rounded-full bg-card border border-primary/30" />
-            <div className="w-6 h-1 rounded-full bg-primary" />
+          <div className="inline-flex items-center gap-4 text-xs text-muted-foreground">
+            <span>Successful navigations: 1*</span>
+            <span className="w-1 h-1 rounded-full bg-border" />
+            <span>*Destination was visible</span>
           </div>
           
-          <div className="flex justify-center gap-3 text-2xl">
-            <span>🇬🇷</span>
-            <span className="animate-wave">🌊</span>
-            <span>🧭</span>
-            <span>❓</span>
-            <span>🇬🇷</span>
+          <div className="flex justify-center gap-2 mt-6">
+            <div className="w-6 h-1 rounded-full bg-primary" />
+            <div className="w-6 h-1 rounded-full bg-muted" />
+            <div className="w-6 h-1 rounded-full bg-primary" />
           </div>
-          
-          <p className="text-[11px] text-muted-foreground mt-4 italic">
-            Total successful navigations by Alon: 1* <br/>
-            <span className="text-[10px]">*The destination was visible from the street</span>
-          </p>
-        </div>
+        </footer>
       </main>
     </div>
   );

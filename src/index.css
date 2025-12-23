@@ -2,94 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* Greek-inspired palette */
-    --background: 210 35% 98%;
-    --foreground: 215 50% 15%;
+    /* Refined Greek palette */
+    --background: 220 20% 98%;
+    --foreground: 220 40% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 50% 15%;
+    --card-foreground: 220 40% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 50% 15%;
+    --popover-foreground: 220 40% 13%;
 
-    /* Aegean Blue - the iconic Greek blue */
-    --primary: 210 85% 45%;
+    /* Deep Aegean Blue */
+    --primary: 215 75% 42%;
     --primary-foreground: 0 0% 100%;
 
-    /* Terracotta/Clay - Mediterranean warmth */
-    --secondary: 18 75% 55%;
+    /* Warm Terracotta */
+    --secondary: 15 70% 50%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Santorini white with blue tint */
-    --muted: 210 25% 94%;
-    --muted-foreground: 215 30% 40%;
+    /* Refined neutrals */
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 15% 45%;
 
-    /* Olive green - Greek nature */
-    --accent: 85 40% 38%;
+    /* Olive accent */
+    --accent: 160 40% 40%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 30% 90%;
-    --input: 210 30% 90%;
-    --ring: 210 85% 45%;
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 215 75% 42%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Extended Greek palette */
-    --aegean: 210 85% 45%;
-    --aegean-light: 200 80% 65%;
-    --aegean-dark: 215 80% 35%;
-    --terracotta: 18 75% 55%;
-    --terracotta-light: 25 70% 70%;
-    --olive: 85 40% 38%;
-    --olive-light: 90 35% 55%;
-    --sand: 40 50% 88%;
-    --whitewash: 210 30% 98%;
-    --sunset: 35 90% 60%;
+    /* Extended palette */
+    --aegean: 215 75% 42%;
+    --aegean-light: 210 65% 55%;
+    --aegean-dark: 220 70% 32%;
+    --terracotta: 15 70% 50%;
+    --terracotta-light: 20 60% 65%;
+    --olive: 160 40% 40%;
+    --sand: 45 40% 92%;
 
-    /* Gradients */
-    --gradient-aegean: linear-gradient(135deg, hsl(210 85% 45%) 0%, hsl(200 80% 55%) 50%, hsl(190 75% 65%) 100%);
-    --gradient-sunset: linear-gradient(135deg, hsl(35 90% 60%) 0%, hsl(18 75% 55%) 100%);
-    
-    /* Shadows */
-    --shadow-card: 0 4px 24px -6px hsl(210 85% 45% / 0.12);
-    --shadow-hover: 0 12px 32px -8px hsl(210 85% 45% / 0.2);
+    /* Professional shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 40% 13% / 0.05);
+    --shadow-card: 0 1px 3px 0 hsl(220 40% 13% / 0.1), 0 1px 2px -1px hsl(220 40% 13% / 0.1);
+    --shadow-md: 0 4px 6px -1px hsl(220 40% 13% / 0.1), 0 2px 4px -2px hsl(220 40% 13% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(220 40% 13% / 0.1), 0 4px 6px -4px hsl(220 40% 13% / 0.1);
   }
 
   .dark {
-    --background: 215 50% 8%;
-    --foreground: 210 30% 95%;
+    --background: 220 30% 6%;
+    --foreground: 220 15% 95%;
 
-    --card: 215 45% 12%;
-    --card-foreground: 210 30% 95%;
+    --card: 220 25% 10%;
+    --card-foreground: 220 15% 95%;
 
-    --popover: 215 45% 12%;
-    --popover-foreground: 210 30% 95%;
+    --popover: 220 25% 10%;
+    --popover-foreground: 220 15% 95%;
 
-    --primary: 200 80% 55%;
-    --primary-foreground: 215 50% 8%;
+    --primary: 210 70% 55%;
+    --primary-foreground: 220 30% 6%;
 
-    --secondary: 25 70% 55%;
+    --secondary: 18 65% 55%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 215 35% 18%;
-    --muted-foreground: 210 20% 65%;
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 12% 60%;
 
-    --accent: 90 40% 45%;
+    --accent: 160 45% 48%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62% 35%;
+    --destructive: 0 62% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 30% 22%;
-    --input: 215 30% 22%;
-    --ring: 200 80% 55%;
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 210 70% 55%;
   }
 }
 
@@ -100,39 +95,30 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
   h1, h2, h3 {
-    font-family: 'Fraunces', serif;
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer utilities {
   .font-display {
-    font-family: 'Fraunces', serif;
+    font-family: 'Playfair Display', Georgia, serif;
   }
   
-  .text-gradient-aegean {
-    background: var(--gradient-aegean);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .bg-gradient-aegean {
-    background: var(--gradient-aegean);
-  }
-  
-  .bg-gradient-sunset {
-    background: var(--gradient-sunset);
+  .font-body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 }
 
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -140,22 +126,12 @@
   }
 }
 
-@keyframes wave {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-.animate-wave {
-  animation: wave 2s ease-in-out infinite;
-}
-
-.animate-shimmer {
-  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.1), transparent);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }
