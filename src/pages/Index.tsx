@@ -2,290 +2,124 @@ import DaySection from "@/components/DaySection";
 import ScheduleCard from "@/components/ScheduleCard";
 import AlonStatus from "@/components/AlonStatus";
 import TripHeader from "@/components/TripHeader";
+import SettingsBar from "@/components/SettingsBar";
+import { useApp } from "@/context/AppContext";
 
 const Index = () => {
+  const { t, isRTL } = useApp();
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className={`min-h-screen bg-background ${isRTL ? "text-right" : ""}`}>
+      <SettingsBar />
       <TripHeader />
 
       {/* Main Content */}
       <main className="max-w-3xl mx-auto px-6 py-12">
-        
         {/* Alon Status */}
         <div className="mb-12">
           <AlonStatus />
         </div>
 
         {/* Day 1 */}
-        <DaySection 
-          date="January 15" 
-          day="Wednesday" 
-          title="Arrival & Orientation" 
+        <DaySection
+          date="January 15"
+          dateNum="15"
+          day={t.day1.day}
+          title={t.day1.title}
           delay={100}
           isFirst
         >
-          <ScheduleCard
-            time="10:30"
-            title="Arrive at Athens International Airport"
-            description="Touch down in Greece. Collect bags, clear customs, begin the adventure."
-            delay={150}
-          />
-          <ScheduleCard
-            time="12:00"
-            title="Hotel Check-in"
-            description="Drop luggage at the hotel. Quick refresh before heading out."
-            delay={200}
-          />
-          <ScheduleCard
-            time="12:30"
-            title="Navigate to Syntagma Square"
-            description="Alon takes the lead. 'It's literally a 10-minute walk.' The journey begins."
-            isAlonMoment
-            delay={250}
-          />
-          <ScheduleCard
-            time="12:45"
-            title="First Recalculation"
-            description="'This is correct, we just need to go around.' Narrator: We did not."
-            isAlonMoment
-            delay={300}
-          />
-          <ScheduleCard
-            time="13:15"
-            title="Coffee Stop"
-            description="'Let's recalibrate here.' Translation: covert Google Maps consultation."
-            isAlonMoment
-            delay={350}
-          />
-          <ScheduleCard
-            time="14:00"
-            title="Syntagma Square"
-            description="Finally arrived. The 90-minute 'scenic route' shall not be discussed."
-            delay={400}
-          />
-          <ScheduleCard
-            time="15:00"
-            title="Changing of the Guard"
-            description="Watch the Evzones ceremony at Parliament. Genuinely impressive."
-            delay={450}
-          />
-          <ScheduleCard
-            time="19:00"
-            title="Dinner in Plaka"
-            description="First Greek dinner. Order everything. Discover ouzo is potent."
-            delay={500}
-          />
+          <ScheduleCard {...t.schedule.d1_1} delay={150} />
+          <ScheduleCard {...t.schedule.d1_2} delay={200} />
+          <ScheduleCard {...t.schedule.d1_3} isAlonMoment delay={250} />
+          <ScheduleCard {...t.schedule.d1_4} isAlonMoment delay={300} />
+          <ScheduleCard {...t.schedule.d1_5} isAlonMoment delay={350} />
+          <ScheduleCard {...t.schedule.d1_6} delay={400} />
+          <ScheduleCard {...t.schedule.d1_7} delay={450} />
+          <ScheduleCard {...t.schedule.d1_8} delay={500} />
         </DaySection>
 
         {/* Day 2 */}
-        <DaySection 
-          date="January 16" 
-          day="Thursday" 
-          title="Ancient History" 
+        <DaySection
+          date="January 16"
+          dateNum="16"
+          day={t.day2.day}
+          title={t.day2.title}
           delay={550}
         >
-          <ScheduleCard
-            time="08:30"
-            title="Greek Breakfast"
-            description="Coffee and spanakopita. Everyone pretends last night's ouzo was fine."
-            delay={600}
-          />
-          <ScheduleCard
-            time="09:30"
-            title="Route to Acropolis"
-            description="Alon suggests a 'better route.' Group votes to follow Google Maps instead."
-            isAlonMoment
-            delay={650}
-          />
-          <ScheduleCard
-            time="10:00"
-            title="The Acropolis"
-            description="The Parthenon. 2,500 years of history. Everyone takes the same photo."
-            delay={700}
-          />
-          <ScheduleCard
-            time="12:30"
-            title="Acropolis Museum"
-            description="World-class collection. Learn things. Buy souvenirs in the gift shop."
-            delay={750}
-          />
-          <ScheduleCard
-            time="14:00"
-            title="Lunch in Monastiraki"
-            description="Souvlaki at the famous spots. Alon's 'local place' suggestion is declined."
-            delay={800}
-          />
-          <ScheduleCard
-            time="16:00"
-            title="Ancient Agora"
-            description="Where Socrates walked. Someone attempts a philosophy joke. It doesn't land."
-            delay={850}
-          />
-          <ScheduleCard
-            time="20:00"
-            title="Rooftop Dinner"
-            description="Acropolis view at night. Alon found this successfully. It was visible from the street."
-            delay={900}
-          />
+          <ScheduleCard {...t.schedule.d2_1} delay={600} />
+          <ScheduleCard {...t.schedule.d2_2} isAlonMoment delay={650} />
+          <ScheduleCard {...t.schedule.d2_3} delay={700} />
+          <ScheduleCard {...t.schedule.d2_4} delay={750} />
+          <ScheduleCard {...t.schedule.d2_5} delay={800} />
+          <ScheduleCard {...t.schedule.d2_6} delay={850} />
+          <ScheduleCard {...t.schedule.d2_7} delay={900} />
         </DaySection>
 
         {/* Day 3 */}
-        <DaySection 
-          date="January 17" 
-          day="Friday" 
-          title="Markets & Exploration" 
+        <DaySection
+          date="January 17"
+          dateNum="17"
+          day={t.day3.day}
+          title={t.day3.title}
           delay={950}
         >
-          <ScheduleCard
-            time="09:00"
-            title="Central Market"
-            description="Athens Central Market. Fish, meat, spices. Nearly buy an octopus."
-            delay={1000}
-          />
-          <ScheduleCard
-            time="11:00"
-            title="Kolonaki Coffee"
-            description="Upscale neighborhood. €7 lattes. Pretend we belong here."
-            delay={1050}
-          />
-          <ScheduleCard
-            time="12:30"
-            title="Lycabettus Approach"
-            description="'I found stairs that go straight up.' 45 minutes later, we find the funicular."
-            isAlonMoment
-            delay={1100}
-          />
-          <ScheduleCard
-            time="14:00"
-            title="Lycabettus Hill"
-            description="360° views of Athens. Worth the climb that wasn't necessary."
-            delay={1150}
-          />
-          <ScheduleCard
-            time="16:00"
-            title="National Garden"
-            description="Peaceful city escape. Turtles in the pond. Very wholesome."
-            delay={1200}
-          />
-          <ScheduleCard
-            time="18:00"
-            title="Psiri District"
-            description="Street art, bars, vibes. Alon disappears for 20 mins. Claims 'scouting.'"
-            isAlonMoment
-            delay={1250}
-          />
-          <ScheduleCard
-            time="21:00"
-            title="Night Out"
-            description="Gazi nightlife. Dance to unfamiliar music. Create selective memories."
-            delay={1300}
-          />
+          <ScheduleCard {...t.schedule.d3_1} delay={1000} />
+          <ScheduleCard {...t.schedule.d3_2} delay={1050} />
+          <ScheduleCard {...t.schedule.d3_3} isAlonMoment delay={1100} />
+          <ScheduleCard {...t.schedule.d3_4} delay={1150} />
+          <ScheduleCard {...t.schedule.d3_5} delay={1200} />
+          <ScheduleCard {...t.schedule.d3_6} isAlonMoment delay={1250} />
+          <ScheduleCard {...t.schedule.d3_7} delay={1300} />
         </DaySection>
 
         {/* Day 4 */}
-        <DaySection 
-          date="January 18" 
-          day="Saturday" 
-          title="Coastal Excursion" 
+        <DaySection
+          date="January 18"
+          dateNum="18"
+          day={t.day4.day}
+          title={t.day4.title}
           delay={1350}
         >
-          <ScheduleCard
-            time="08:00"
-            title="Car Rental"
-            description="Road trip day. Alon volunteers to navigate. 'We'll use GPS' — everyone."
-            isAlonMoment
-            delay={1400}
-          />
-          <ScheduleCard
-            time="10:00"
-            title="Temple of Poseidon"
-            description="Cape Sounion. Clifftop temple. Azure sea views. Ancient Greeks had taste."
-            delay={1450}
-          />
-          <ScheduleCard
-            time="12:30"
-            title="Beach Stop"
-            description="Mediterranean in January. Brisk but refreshing. One person goes fully in."
-            delay={1500}
-          />
-          <ScheduleCard
-            time="14:30"
-            title="Seaside Lunch"
-            description="Fresh fish taverna. The owner recommends. Everything is excellent."
-            delay={1550}
-          />
-          <ScheduleCard
-            time="17:00"
-            title="Return to Athens"
-            description="Sunset coastal drive. Alon sleeps in the back. Everyone agrees this is ideal."
-            delay={1600}
-          />
-          <ScheduleCard
-            time="20:30"
-            title="Farewell Dinner"
-            description="Full mezze spread. Too much raki. Speeches about friendship occur."
-            delay={1650}
-          />
+          <ScheduleCard {...t.schedule.d4_1} isAlonMoment delay={1400} />
+          <ScheduleCard {...t.schedule.d4_2} delay={1450} />
+          <ScheduleCard {...t.schedule.d4_3} delay={1500} />
+          <ScheduleCard {...t.schedule.d4_4} delay={1550} />
+          <ScheduleCard {...t.schedule.d4_5} delay={1600} />
+          <ScheduleCard {...t.schedule.d4_6} delay={1650} />
         </DaySection>
 
         {/* Day 5 */}
-        <DaySection 
-          date="January 19" 
-          day="Sunday" 
-          title="Departure" 
+        <DaySection
+          date="January 19"
+          dateNum="19"
+          day={t.day5.day}
+          title={t.day5.title}
           delay={1700}
         >
-          <ScheduleCard
-            time="09:00"
-            title="Slow Morning"
-            description="Final Greek breakfast. Deliberate movements. Therapeutic coffee consumption."
-            delay={1750}
-          />
-          <ScheduleCard
-            time="11:00"
-            title="Last Souvenirs"
-            description="Olive oil, spices, magnets. Alon buys a compass. 'Ironic,' he claims."
-            delay={1800}
-          />
-          <ScheduleCard
-            time="12:30"
-            title="Final Coffee at Syntagma"
-            description="Return to where it began. Alon claims he could find it blindfolded now. Untested."
-            isAlonMoment
-            delay={1850}
-          />
-          <ScheduleCard
-            time="14:00"
-            title="Airport Transfer"
-            description="Professional taxi driver. Direct route. No wrong turns. Strange sensation."
-            delay={1900}
-          />
-          <ScheduleCard
-            time="17:30"
-            title="Departure"
-            description="Board the flight home. Group chat already planning next trip. Alon's navigation privileges: under review."
-            delay={1950}
-          />
+          <ScheduleCard {...t.schedule.d5_1} delay={1750} />
+          <ScheduleCard {...t.schedule.d5_2} delay={1800} />
+          <ScheduleCard {...t.schedule.d5_3} isAlonMoment delay={1850} />
+          <ScheduleCard {...t.schedule.d5_4} delay={1900} />
+          <ScheduleCard {...t.schedule.d5_5} delay={1950} />
         </DaySection>
 
         {/* Footer */}
-        <footer 
+        <footer
           className="mt-16 pt-8 border-t border-border text-center"
-          style={{ opacity: 0, animation: 'fade-in-up 0.4s ease-out 2000ms forwards' }}
+          style={{ opacity: 0, animation: "fade-in-up 0.4s ease-out 2000ms forwards" }}
         >
           <blockquote className="text-lg font-display text-foreground italic mb-2">
-            "The main square is definitely this way."
+            {t.footerQuote}
           </blockquote>
-          <p className="text-sm text-muted-foreground mb-6">
-            — Alon, to Ran, Johnatan & Rubi • January 15, 2025
-          </p>
-          
+          <p className="text-sm text-muted-foreground mb-6">{t.footerAttribution}</p>
+
           <div className="inline-flex items-center gap-4 text-xs text-muted-foreground">
-            <span>Successful navigations: 1*</span>
+            <span>{t.successfulNavigations}</span>
             <span className="w-1 h-1 rounded-full bg-border" />
-            <span>*Destination was visible</span>
+            <span>{t.asterisk}</span>
           </div>
-          
+
           <div className="flex justify-center gap-2 mt-6">
             <div className="w-6 h-1 rounded-full bg-primary" />
             <div className="w-6 h-1 rounded-full bg-muted" />
