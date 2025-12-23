@@ -3,12 +3,12 @@ import { useApp } from "@/context/AppContext";
 interface ScheduleCardProps {
   time: string;
   title: string;
-  description: string;
+  desc: string;
   isAlonMoment?: boolean;
   delay?: number;
 }
 
-const ScheduleCard = ({ time, title, description, isAlonMoment, delay = 0 }: ScheduleCardProps) => {
+const ScheduleCard = ({ time, title, desc, isAlonMoment, delay = 0 }: ScheduleCardProps) => {
   const { t, isRTL } = useApp();
 
   return (
@@ -37,7 +37,7 @@ const ScheduleCard = ({ time, title, description, isAlonMoment, delay = 0 }: Sch
             </span>
           )}
         </div>
-        <p className="text-sm text-muted-foreground leading-relaxed mt-0.5">{description}</p>
+        <p className="text-sm text-muted-foreground leading-relaxed mt-0.5">{desc}</p>
       </div>
     </div>
   );
