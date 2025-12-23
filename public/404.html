@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0; url=./" />
+    <script>
+      // SPA redirect for GitHub Pages (keeps client-side routes working)
+      (function () {
+        var path = location.pathname;
+        var base = "/alon-lost-in-athens";
+        if (path.startsWith(base + "/")) {
+          var redirect = base + "/?path=" + encodeURIComponent(path.slice(base.length + 1)) +
+            "&search=" + encodeURIComponent(location.search.slice(1)) +
+            "&hash=" + encodeURIComponent(location.hash.slice(1));
+          location.replace(redirect);
+        } else {
+          location.replace("./");
+        }
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
