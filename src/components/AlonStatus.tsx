@@ -9,6 +9,8 @@ const statuses = [
   { text: "Stopped for coffee 'real quick'...", emoji: "☕" },
   { text: "Says it's 'just around the corner'...", emoji: "📍" },
   { text: "Blaming the GPS signal...", emoji: "📡" },
+  { text: "Consulting with a stray cat...", emoji: "🐱" },
+  { text: "Found a nice view, forgot the mission...", emoji: "🌅" },
 ];
 
 const AlonStatus = () => {
@@ -18,11 +20,15 @@ const AlonStatus = () => {
   useEffect(() => {
     const statusInterval = setInterval(() => {
       setStatusIndex(prev => (prev + 1) % statuses.length);
-    }, 4000);
+    }, 3500);
     
     const progressInterval = setInterval(() => {
-      setProgress(prev => Math.min(prev + 0.5, 85)); // Never reaches 100
-    }, 1000);
+      setProgress(prev => {
+        // Progress goes up and down, never reaching 100
+        if (prev >= 78) return 45;
+        return prev + Math.random() * 2;
+      });
+    }, 800);
     
     return () => {
       clearInterval(statusInterval);
@@ -33,29 +39,41 @@ const AlonStatus = () => {
   const currentStatus = statuses[statusIndex];
 
   return (
-    <div className="bg-card border border-border/50 rounded-2xl p-4 shadow-card">
-      <div className="flex items-center justify-between mb-3">
-        <div className="flex items-center gap-2">
-          <span className="text-xl">{currentStatus.emoji}</span>
+    <div className="bg-card border border-primary/20 rounded-2xl p-5 shadow-card overflow-hidden relative">
+      {/* Decorative wave pattern */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-aegean opacity-50" />
+      
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-2xl">
+            {currentStatus.emoji}
+          </div>
           <div>
-            <p className="text-xs font-bold text-secondary uppercase tracking-wide">Live Navigation Status</p>
-            <p className="text-sm text-foreground font-medium">{currentStatus.text}</p>
+            <p className="text-xs font-bold text-primary uppercase tracking-wider">Alon's Navigation Status</p>
+            <p className="text-sm text-foreground font-semibold mt-0.5">{currentStatus.text}</p>
           </div>
         </div>
         <div className="text-right">
-          <p className="text-2xl font-bold text-secondary">{progress.toFixed(0)}%</p>
-          <p className="text-[10px] text-muted-foreground">to Syntagma</p>
+          <p className="text-3xl font-bold text-primary">{progress.toFixed(0)}%</p>
+          <p className="text-[10px] text-muted-foreground font-medium">to Syntagma</p>
         </div>
       </div>
-      <div className="h-1.5 bg-muted rounded-full overflow-hidden">
+      
+      <div className="h-2 bg-muted rounded-full overflow-hidden">
         <div 
-          className="h-full bg-gradient-to-r from-secondary to-secondary/60 transition-all duration-1000 rounded-full"
+          className="h-full bg-gradient-aegean transition-all duration-700 rounded-full"
           style={{ width: `${progress}%` }}
         />
       </div>
-      <p className="text-[10px] text-muted-foreground text-center mt-2 italic">
-        ETA: Unknown • Confidence Level: Low
-      </p>
+      
+      <div className="flex items-center justify-between mt-3">
+        <p className="text-[11px] text-muted-foreground">
+          ETA: <span className="text-secondary font-semibold">¯\_(ツ)_/¯</span>
+        </p>
+        <p className="text-[11px] text-muted-foreground">
+          Confidence: <span className="text-secondary font-semibold">Suspiciously High</span>
+        </p>
+      </div>
     </div>
   );
 };

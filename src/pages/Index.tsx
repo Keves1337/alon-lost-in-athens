@@ -308,20 +308,36 @@ const Index = () => {
 
         {/* Footer */}
         <div 
-          className="text-center mt-12 p-6 bg-card/50 rounded-2xl border border-border/30"
+          className="text-center mt-12 p-8 bg-card rounded-2xl border border-primary/20 shadow-card relative overflow-hidden"
           style={{ opacity: 0, animation: 'fade-in-up 0.5s ease-out 2200ms forwards' }}
         >
-          <p className="text-lg font-display text-foreground mb-2">
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-aegean" />
+          
+          <p className="text-xl font-display text-foreground mb-2">
             "The main square is definitely this way"
           </p>
-          <p className="text-sm text-muted-foreground">
-            — Alon, January 15, 2025 (and several times after)
+          <p className="text-sm text-muted-foreground mb-4">
+            — Alon, to Ran, Johnatan & Rubi Dabush Elbaz • January 15, 2025
           </p>
-          <div className="flex justify-center gap-2 mt-4 text-2xl">
-            <span>🇬🇷</span>
-            <span>🗺️</span>
-            <span>❓</span>
+          
+          <div className="flex justify-center gap-1 mb-4">
+            <div className="w-6 h-1 rounded-full bg-primary" />
+            <div className="w-6 h-1 rounded-full bg-card border border-primary/30" />
+            <div className="w-6 h-1 rounded-full bg-primary" />
           </div>
+          
+          <div className="flex justify-center gap-3 text-2xl">
+            <span>🇬🇷</span>
+            <span className="animate-wave">🌊</span>
+            <span>🧭</span>
+            <span>❓</span>
+            <span>🇬🇷</span>
+          </div>
+          
+          <p className="text-[11px] text-muted-foreground mt-4 italic">
+            Total successful navigations by Alon: 1* <br/>
+            <span className="text-[10px]">*The destination was visible from the street</span>
+          </p>
         </div>
       </main>
     </div>

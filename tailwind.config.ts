@@ -47,44 +47,23 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        terracotta: "hsl(var(--terracotta))",
-        azure: "hsl(var(--azure))",
-        olive: "hsl(var(--olive))",
+        // Greek palette
+        aegean: {
+          DEFAULT: "hsl(var(--aegean))",
+          light: "hsl(var(--aegean-light))",
+          dark: "hsl(var(--aegean-dark))",
+        },
+        terracotta: {
+          DEFAULT: "hsl(var(--terracotta))",
+          light: "hsl(var(--terracotta-light))",
+        },
+        olive: {
+          DEFAULT: "hsl(var(--olive))",
+          light: "hsl(var(--olive-light))",
+        },
         sand: "hsl(var(--sand))",
-        "greek-blue": "hsl(var(--greek-blue))",
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      fontFamily: {
-        sans: ['Nunito', 'sans-serif'],
-        display: ['Pacifico', 'cursive'],
-      },
-      boxShadow: {
-        card: "var(--shadow-card)",
-        hover: "var(--shadow-hover)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-        "fade-in-up": {
-          from: { opacity: "0", transform: "translateY(20px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
-        },
-        "bounce-in": {
-          "0%": { transform: "scale(0.3)", opacity: "0" },
-          "50%": { transform: "scale(1.05)" },
-          "70%": { transform: "scale(0.9)" },
-          "100%": { transform: "scale(1)", opacity: "1" },
-        },
+        whitewash: "hsl(var(--whitewash))",
+        sunset: "hsl(var(--sunset))",
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
