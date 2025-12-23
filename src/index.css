@@ -2,85 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 45 30% 96%;
-    --foreground: 220 30% 15%;
+    --background: 40 25% 97%;
+    --foreground: 220 25% 12%;
 
-    --card: 45 40% 98%;
-    --card-foreground: 220 30% 15%;
+    --card: 40 30% 99%;
+    --card-foreground: 220 25% 12%;
 
-    --popover: 45 40% 98%;
-    --popover-foreground: 220 30% 15%;
+    --popover: 40 30% 99%;
+    --popover-foreground: 220 25% 12%;
 
-    --primary: 205 85% 45%;
+    --primary: 210 70% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 25 60% 55%;
+    --secondary: 25 85% 55%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 45 20% 90%;
-    --muted-foreground: 220 15% 45%;
+    --muted: 40 15% 92%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 150 40% 40%;
+    --accent: 165 50% 40%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 45 25% 85%;
-    --input: 45 25% 85%;
-    --ring: 205 85% 45%;
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 210 70% 45%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
-    /* Custom colors */
-    --terracotta: 20 70% 50%;
-    --azure: 205 85% 50%;
-    --olive: 75 35% 45%;
-    --sand: 40 45% 85%;
-    --greek-blue: 210 80% 55%;
+    /* Custom tokens */
+    --terracotta: 20 75% 52%;
+    --azure: 210 75% 52%;
+    --olive: 85 30% 42%;
+    --sand: 40 40% 88%;
 
-    /* Gradients */
-    --gradient-mediterranean: linear-gradient(135deg, hsl(205 85% 50%) 0%, hsl(195 75% 60%) 50%, hsl(185 65% 70%) 100%);
-    --gradient-sunset: linear-gradient(135deg, hsl(25 80% 60%) 0%, hsl(35 85% 65%) 50%, hsl(45 75% 75%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(45 40% 99%) 0%, hsl(45 35% 95%) 100%);
-
-    /* Shadows */
-    --shadow-card: 0 8px 30px -10px hsl(var(--primary) / 0.2);
-    --shadow-hover: 0 15px 40px -12px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(220 25% 12% / 0.08);
+    --shadow-hover: 0 8px 30px -6px hsl(210 70% 45% / 0.15);
   }
 
   .dark {
-    --background: 220 30% 10%;
-    --foreground: 45 30% 95%;
+    --background: 220 25% 8%;
+    --foreground: 40 20% 95%;
 
-    --card: 220 25% 15%;
-    --card-foreground: 45 30% 95%;
+    --card: 220 20% 12%;
+    --card-foreground: 40 20% 95%;
 
-    --popover: 220 25% 15%;
-    --popover-foreground: 45 30% 95%;
+    --popover: 220 20% 12%;
+    --popover-foreground: 40 20% 95%;
 
-    --primary: 205 85% 55%;
-    --primary-foreground: 220 30% 10%;
+    --primary: 210 70% 55%;
+    --primary-foreground: 220 25% 8%;
 
-    --secondary: 25 60% 55%;
+    --secondary: 25 85% 55%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 20% 20%;
-    --muted-foreground: 45 15% 65%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 40 10% 60%;
 
-    --accent: 150 40% 50%;
+    --accent: 165 50% 50%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 35%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 25%;
-    --input: 220 20% 25%;
-    --ring: 205 85% 55%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 210 70% 55%;
   }
 }
 
@@ -90,12 +83,29 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
-    font-family: 'Nunito', sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', sans-serif;
   }
 
   h1, h2, h3 {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Fraunces', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Fraunces', serif;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
