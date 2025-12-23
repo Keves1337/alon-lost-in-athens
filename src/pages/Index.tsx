@@ -125,6 +125,10 @@ const Index = () => {
             <div className="w-6 h-1 rounded-full bg-muted" />
             <div className="w-6 h-1 rounded-full bg-primary" />
           </div>
+
+          <p className="text-xs text-muted-foreground mt-8">
+            Developed, designed and tested by Johnatan Milrad
+          </p>
         </footer>
       </main>
     </div>
