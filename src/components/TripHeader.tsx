@@ -1,8 +1,8 @@
 const travelers = [
-  { name: "Ran", initials: "R" },
-  { name: "Johnatan", initials: "J" },
-  { name: "Rubi Dabush Elbaz", initials: "RDE" },
-  { name: "Alon", initials: "A", isNavigator: true },
+  { name: "Ran" },
+  { name: "Johnatan" },
+  { name: "Rubi Dabush Elbaz" },
+  { name: "Alon", isNavigator: true },
 ];
 
 const TripHeader = () => {
@@ -50,35 +50,26 @@ const TripHeader = () => {
         
         {/* Travelers */}
         <div 
-          className="flex items-center gap-6 flex-wrap"
+          className="flex flex-col gap-4"
           style={{ opacity: 0, animation: 'fade-in-up 0.5s ease-out 200ms forwards' }}
         >
           <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Travelers</span>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-wrap">
             {travelers.map((traveler, i) => (
               <div 
                 key={i}
-                className="group relative"
+                className={`
+                  px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
+                  ${traveler.isNavigator 
+                    ? 'bg-secondary text-secondary-foreground' 
+                    : 'bg-muted text-foreground hover:bg-primary hover:text-primary-foreground'
+                  }
+                `}
               >
-                <div 
-                  className={`
-                    w-10 h-10 rounded-full flex items-center justify-center text-xs font-semibold
-                    transition-all duration-200
-                    ${traveler.isNavigator 
-                      ? 'bg-secondary text-secondary-foreground ring-2 ring-secondary/30 ring-offset-2 ring-offset-background' 
-                      : 'bg-muted text-foreground hover:bg-primary hover:text-primary-foreground'
-                    }
-                  `}
-                >
-                  {traveler.initials}
-                </div>
-                {/* Tooltip */}
-                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                  <span className="text-[10px] bg-foreground text-background px-2 py-1 rounded font-medium">
-                    {traveler.name}
-                    {traveler.isNavigator && ' 🧭'}
-                  </span>
-                </div>
+                {traveler.name}
+                {traveler.isNavigator && (
+                  <span className="ml-2 text-xs opacity-80">🧭 Navigator</span>
+                )}
               </div>
             ))}
           </div>
